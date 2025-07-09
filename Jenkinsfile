@@ -19,6 +19,7 @@ pipeline {
 
                     echo "📦 Installing dependencies..."
                     npm install --verbose
+                    npm run build
                 '''
 
             }
