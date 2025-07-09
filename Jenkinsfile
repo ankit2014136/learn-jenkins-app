@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'node:18-bullseye' // ✅ Use full Debian-based image
+                    image 'node:18-bookworm' // ✅ Use full Debian-based image
                     reuseNode true
                 }
             }
