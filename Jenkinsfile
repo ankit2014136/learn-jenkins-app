@@ -6,6 +6,7 @@ pipeline {
             agent {
                 docker {
                     image 'node:18-bullseye-slim' // ✅ Use full Debian-based image
+                    args '--network=host'
                     reuseNode true
                 }
             }
