@@ -26,6 +26,14 @@ pipeline {
         }
 
         stage('Test') {
+            agent {
+                docker {
+                    image 'node:18-bullseye-slim' // ✅ Use full Debian-based image
+                    args '--network=host'
+                    reuseNode true
+                }
+            }
+
             steps {
                 sh '''
                     test -f build/index.html && echo "File exists" || echo "File does not exist"
